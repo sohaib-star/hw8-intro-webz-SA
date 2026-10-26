@@ -1,0 +1,177 @@
+
+:host {
+    display: block;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.phone-calculator {
+    position: relative;
+    box-sizing: border-box;
+    width: 344px;
+    max-width: 100%;
+    margin: 25px auto;
+    padding: 18px;
+    background: #000;
+    color: white;
+    border-radius: 38px;
+    box-shadow: 0 12px 40px #0004;
+}
+
+.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 36px;
+}
+
+.app-name {
+    font-size: 15px;
+    color: #aaa;
+}
+
+.history-button,
+.history-clear {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.history-clear {
+    font-size: 28px;
+}
+
+.display {
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    padding: 10px 4px 20px;
+    overflow: hidden;
+}
+
+#expression {
+    color: #999;
+    font-size: 19px;
+    min-height: 27px;
+}
+
+#result {
+    max-width: 100%;
+    font-size: clamp(35px, 12vw, 58px);
+    font-weight: 300;
+    overflow-wrap: anywhere;
+    text-align: right;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.buttons button {
+    aspect-ratio: 1;
+    min-width: 0;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+    transition: filter 0.1s;
+}
+
+.dark { background: #333; }
+.gray { background: #a5a5a5; color: #000 !important; }
+.orange { background: #ff9500; }
+
+.buttons button:active {
+    filter: brightness(1.5);
+}
+
+.history-panel {
+    display: none;
+    position: absolute;
+    z-index: 5;
+    inset: 0;
+    padding: 22px 18px;
+    background: #171717;
+    border-radius: 38px;
+    overflow-y: auto;
+}
+
+.history-panel.open {
+    display: block;
+}
+
+.history-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.history-heading button {
+    background: #333;
+    border: none;
+    border-radius: 18px;
+    color: #ff9f0a;
+    padding: 8px 14px;
+    cursor: pointer;
+}
+
+#history-empty {
+    color: #999;
+    text-align: center;
+    margin-top: 45px;
+}
+
+.history-item {
+    border-bottom: 1px solid #383838;
+    padding: 15px 0;
+}
+
+.history-expression {
+    color: #aaa;
+    font-size: 14px;
+    overflow-wrap: anywhere;
+}
+
+.history-answer {
+    font-size: 27px;
+    text-align: right;
+    margin: 7px 0 12px;
+    overflow-wrap: anywhere;
+}
+
+.history-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+}
+
+.history-actions button {
+    border: none;
+    border-radius: 16px;
+    padding: 7px 12px;
+    background: #333;
+    color: white;
+    cursor: pointer;
+}
+
+.history-actions .delete-history {
+    color: #ff453a;
+}
+
+@media (max-width: 380px) {
+    .phone-calculator {
+        padding: 14px;
+    }
+
+    .buttons {
+        gap: 7px;
+    }
+}
